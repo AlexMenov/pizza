@@ -42,7 +42,7 @@ export const Orders = () => {
         status: number
     }) => {
         try {
-            const response = await axios.post("http://localhost:3000/api/orders/", data);
+            const response = await axios.post(process.env.API_HOST + "/orders/", data);
             response.status === 200 && router.push("/orders/" + response.data._id);
             resetDispatch(reset());
         } catch (error) {
