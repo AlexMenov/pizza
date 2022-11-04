@@ -1,7 +1,7 @@
-import { indexProps } from "./index.props";
+
 import { PizzaList } from "../components/ProductList/PizzaList";
 
-const Home = (result:[indexProps]) => {
+const Home = (result) => {
   return <>
     <PizzaList pizza={result}/>
   </>;

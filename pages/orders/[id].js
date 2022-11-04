@@ -1,10 +1,9 @@
 import { Status } from "../../components/Status/Status";
 import { OrdersStyled, OrdersContainer } from "../../components/Orders/Orders.style";
 import { Paragraph } from "../../components/Paragraph/Paragraph";
-import { paramsProps } from "./params.props";
 
-const Orders = ({ result }: any) => {
-    const { customer, address, total, _id } = result;
+const Orders = ({ result }) => {
+    const { customer, address, total } = result;
     let { paymentMetod } = result;
 
     switch (paymentMetod) {
@@ -53,7 +52,7 @@ const Orders = ({ result }: any) => {
 
 export default Orders;
 
-export const getServerSideProps = async ({ params }: any) => {
+export const getServerSideProps = async ({ params }) => {
     const id = params.id;
     const response = await fetch("http://localhost:3000/api/orders/" + id);
     const data = await response.json();
