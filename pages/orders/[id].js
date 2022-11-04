@@ -54,7 +54,7 @@ export default Orders;
 
 export const getServerSideProps = async ({ params }) => {
     const id = params.id;
-    const response = await fetch("http://localhost:3000/api/orders/" + id);
+    const response = await fetch(process.env.API_HOST + "/orders/" + id);
     const data = await response.json();
     return {
         props: {

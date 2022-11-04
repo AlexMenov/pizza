@@ -17,8 +17,8 @@ const AllProducts = ({ result }: any) => {
     const [products, setProducts] = useState(result);
     const handleDeleteProduct = async (id: number) => {
         try {
-            await axios.delete("http://localhost:3000/api/products/delete/" + id);
-            const response = await fetch("http://localhost:3000/api/products/pizza");
+            await axios.delete(process.env.API_HOST + "/products/delete/" + id);
+            const response = await fetch(process.env.API_HOST + "/products/pizza");
             const data = await response.json();
             setProducts(data);
         } catch (error) {
@@ -69,7 +69,7 @@ export default AllProducts;
 
 export const getServerSideProps = async () => {
     try {
-        const response = await fetch("http://localhost:3000/api/products/pizza");
+        const response = await fetch(process.env.API_HOST + "/products/pizza");
         const data = await response.json();
         return {
             props: {

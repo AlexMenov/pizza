@@ -16,8 +16,8 @@ const AllOrders = ({ result }: any) => {
     const [orders, setOrders] = useState(result);
     const handleUpdateOrder = async (id: number, count: number) => {
         try {
-            await axios.put("http://localhost:3000/api/orders/put/" + id, { status: ++count });
-            const response = await axios.get("http://localhost:3000/api/orders");
+            await axios.put(process.env.API_HOST + "/orders/put/" + id, { status: ++count });
+            const response = await axios.get(process.env.API_HOST + "/orders");
             setOrders(response.data);
         } catch (error) {
             console.log(error);
@@ -25,8 +25,8 @@ const AllOrders = ({ result }: any) => {
     };
     const handleDeleteOrder = async (id: number) => {
         try {
-            await axios.delete("http://localhost:3000/api/orders/delete/" + id);
-            const response = await axios.get("http://localhost:3000/api/orders");
+            await axios.delete(process.env.API_HOST + "/orders/delete/" + id);
+            const response = await axios.get(process.env.API_HOST + "/orders");
             setOrders(response.data);
         } catch (error) {
             console.log(error);
@@ -78,7 +78,7 @@ export default AllOrders;
 
 export const getServerSideProps = async () => {
     try {
-        const response = await fetch("http://localhost:3000/api/orders");
+        const response = await fetch(process.env.API_HOST + "/orders");
         const data = await response.json();
         return {
             props: {

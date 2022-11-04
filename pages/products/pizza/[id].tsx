@@ -10,7 +10,7 @@ export default Pizza;
 export const getServerSideProps = async ({ params }: any) => {
     
     const id = params.id;
-    const response = await fetch(`http://localhost:3000/api/products/pizza/${id}`);
+    const response = await fetch(`${process.env.API_HOST}/products/pizza/${id}`);
     const data = await response.json();
     return {
         props: {
