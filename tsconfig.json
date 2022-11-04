@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "useUnknownInCatchVariables": false,
+    "checkJs": false,
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/api/products/pizza/index.js",
+    "components/Header/Header.jx",
+    "pages/api/orders/[id].js",
+    "pages/api/orders/index.js"
+, "components/PayPalButton/PayPalButton.js", "components/PayWithCash/PayWithCash.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
