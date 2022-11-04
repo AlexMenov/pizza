@@ -1,7 +1,8 @@
 
 import { PizzaList } from "../components/ProductList/PizzaList";
 
-const Home = (result) => {
+const Home = ({result}) => {
+  console.log(result)
   return <>
     <PizzaList pizza={result}/>
   </>;
