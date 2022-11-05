@@ -11,7 +11,7 @@ const Home = ({result}) => {
 export default Home;
 
 export const getServerSideProps = async () => {
-  const response = await fetch(process.env.API_HOST + "/products/pizza");
+  const response = await fetch("/api/products/pizza");
   const data = await response.json();
   return {
     props: {
